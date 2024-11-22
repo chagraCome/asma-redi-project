@@ -1,8 +1,14 @@
-import { Layout } from "antd";
+import { Layout , Menu } from "antd";
 export default function SecHeader() {
 return(
-    <Layout>
-        @header
-    </Layout>
+    <Layout
+        style={{
+          display: 'flex',
+          alignItems: 'center',
+        }}
+      >
+        <p>header</p>
+      </Layout>
+     
 )
 }

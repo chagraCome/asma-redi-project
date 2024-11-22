@@ -1,8 +1,8 @@
 import { Layout } from "antd";
-export default function SecFooter() {
+export default function SecContent() {
 return(
     <Layout style={{textAlign: 'center'}}>
-        @footer
+        Content
     </Layout>
 )
 }

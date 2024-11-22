@@ -1,17 +1,19 @@
 import { useState } from 'react'
+import { Layout } from 'antd'
 import SecHeader from './components/SecHeader'
 import SecFooter from './components/SecFooter'
+import SecContent from './components/SecContent'
 function App() {
-  const [count, setCount] = useState(0)
+ 
 
   return (
-    <>
+   <Layout style={{textAlign: 'center'}} width={900}>
     <SecHeader />
-  <div>
-    <p>hi</p>
-  </div>
-  <SecFooter />
-    </>
+    <SecContent />
+    <SecFooter />
+   </Layout>
+    
+   
   )
 }
 
