@@ -1,8 +1,9 @@
 import { Layout } from "antd";
 export default function SecFooter() {
+    const { Footer } = Layout;
 return(
-    <Layout style={{textAlign: 'center'}}>
+    <Footer style={{textAlign: 'center'}}>
         @footer
-    </Layout>
+    </Footer>
 )
 }

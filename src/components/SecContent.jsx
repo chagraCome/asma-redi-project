@@ -1,8 +1,22 @@
 import { Layout } from "antd";
 export default function SecContent() {
+const { Content} = Layout;
 return(
-    <Layout style={{textAlign: 'center'}}>
-        Content
-    </Layout>
+    <Content
+          style={{
+            margin: ' 16px',
+          }}
+        >
+          <div
+            style={{
+              padding: 24,
+              minHeight: 360,
+              background: '#f5f5f5',
+              borderRadius: 'fff',
+            }}
+          >
+            content
+          </div>
+        </Content>
 )
 }

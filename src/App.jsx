@@ -7,11 +7,12 @@ function App() {
  
 
   return (
-   <Layout style={{textAlign: 'center'}} width={900}>
-    <SecHeader />
+   <>
+  <SecHeader />
     <SecContent />
     <SecFooter />
-   </Layout>
+
+    </>
     
    
   )
