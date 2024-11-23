@@ -3,16 +3,19 @@ import { Layout } from 'antd'
 import SecHeader from './components/SecHeader'
 import SecFooter from './components/SecFooter'
 import SecContent from './components/SecContent'
+import { RouterProvider,BrowserRouter } from 'react-router-dom'
 function App() {
  
 
   return (
-   <>
-  <SecHeader />
+   
+    <BrowserRouter>  
+    <SecHeader />
     <SecContent />
     <SecFooter />
+    </BrowserRouter>
 
-    </>
+
     
    
   )

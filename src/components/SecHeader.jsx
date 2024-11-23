@@ -1,11 +1,12 @@
 import { Layout , Menu } from "antd";
 import styles from './SecHeader.module.css'
+import { useNavigate } from "react-router-dom";
 export default function SecHeader() {
     const { Header} = Layout;
     const items = [
         {
           label: "All Movies",
-          key: "allMovies",
+          key: "Movies",
           target: "/",
         },
         {
@@ -15,7 +16,14 @@ export default function SecHeader() {
         },
       ];
     
+      const navigate = useNavigate();
 
+      const handleClick = ({ key }) => {
+        const { target } = items.find((item) => item.key === key) || {};
+        if (target) {
+          navigate(target);
+        }
+      };
     return (
         <Header className={styles.radiantbg}
           style={{
@@ -30,6 +38,7 @@ export default function SecHeader() {
             mode="horizontal"
             defaultSelectedKeys={["allMovies"]}
             items={items}
+            onClick={handleClick}
           />
         </Header>
      

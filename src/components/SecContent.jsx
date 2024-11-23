@@ -1,5 +1,7 @@
 import { Layout, Row, Flex} from "antd";
-import MovieCard from "./MovieCard";
+import { Route, Routes } from "react-router-dom"
+import Movies from "./Movies";
+import Watchlist from "./Watchlist";
 export default function SecContent() {
 const { Content} = Layout;
 return(
@@ -20,18 +22,10 @@ return(
             }}
           >
             content
-            <Flex wrap gap="middle" horizontal>
-            
-            <MovieCard />
-            <MovieCard />
-            <MovieCard />
-            <MovieCard />
-            <MovieCard />
-            <MovieCard />
-            <MovieCard />
-            <MovieCard />
-            <MovieCard />
-            </Flex>
+            <Routes>
+          <Route path="/" Component={Movies} exact />
+          <Route path="/watchlist" Component={Watchlist} />
+        </Routes>
 
           </div>
          
