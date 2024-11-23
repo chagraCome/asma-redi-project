@@ -1,4 +1,5 @@
 import { Layout , Menu } from "antd";
+import styles from './SecHeader.module.css'
 export default function SecHeader() {
     const { Header} = Layout;
     const items = [
@@ -16,7 +17,7 @@ export default function SecHeader() {
     
 
     return (
-        <Header
+        <Header className={styles.radiantbg}
           style={{
             position: "sticky",
             top: 0,
@@ -24,7 +25,7 @@ export default function SecHeader() {
             width: "100%",
           }}
         >
-          <Menu
+          <Menu className={styles.radiantbg}
             theme="dark"
             mode="horizontal"
             defaultSelectedKeys={["allMovies"]}
