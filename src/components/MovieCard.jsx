@@ -1,7 +1,8 @@
-import { Card } from "antd";
+import { Card, Button  } from "antd";
 export default function MovieCard() {
 const { Meta } = Card;
 return(
+  <>
     <Card
     hoverable
     style={{
@@ -10,6 +11,9 @@ return(
     cover={<img alt="example" src="https://os.alipayobjects.com/rmsportal/QBnOOoLaAfKPirc.png" />}
   >
     <Meta title="Europe Street beat" description="www.instagram.com" />
+    <Button style={{marginTop:15}}type="primary">Add to Watchlist</Button>
   </Card>
+  </>
+  
 )
 }

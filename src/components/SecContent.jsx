@@ -20,12 +20,17 @@ return(
             }}
           >
             content
-            <Flex gap="middle" horizontal>
+            <Flex wrap gap="middle" horizontal>
             
             <MovieCard />
             <MovieCard />
             <MovieCard />
-            
+            <MovieCard />
+            <MovieCard />
+            <MovieCard />
+            <MovieCard />
+            <MovieCard />
+            <MovieCard />
             </Flex>
 
           </div>
