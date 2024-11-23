@@ -1,4 +1,5 @@
-import { Layout } from "antd";
+import { Layout, Row, Flex} from "antd";
+import MovieCard from "./MovieCard";
 export default function SecContent() {
 const { Content} = Layout;
 return(
@@ -7,6 +8,9 @@ return(
             margin: ' 16px',
           }}
         >
+             
+
+            
           <div
             style={{
               padding: 24,
@@ -16,7 +20,16 @@ return(
             }}
           >
             content
+            <Flex gap="middle" horizontal>
+            
+            <MovieCard />
+            <MovieCard />
+            <MovieCard />
+            
+            </Flex>
+
           </div>
+         
         </Content>
 )
 }
