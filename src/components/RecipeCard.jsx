@@ -1,11 +1,11 @@
 import { Card, Button  } from "antd";
 import { Link } from 'react-router-dom';
 import RecipePage from "./RecipePage";
-export default function RecipeCard({recipeData}) {
+export default function RecipeCard({recipeData,favRecip,setfavRecip}) {
 const { Meta } = Card;
 //console.log(recipeData)
-const handleClick=()=>{
-
+const AddToFavorite=()=>{
+  setfavRecip([...favRecip, recipeData])
 }
 return(
   <>
@@ -19,7 +19,7 @@ return(
       <Meta title={recipeData.name} description={recipeData.servings} />
       
       <Button style={{marginTop:15}}type="primary" 
-      onClick={()=> <RecipePage recipeData={recipeData} key={recipeData.id}/>}>read more</Button>
+      onClick={AddToFavorite}>read more</Button>
 
     
     

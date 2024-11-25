@@ -1,14 +1,15 @@
 import { Layout, Row, Flex} from "antd";
-import { Route, Routes } from "react-router-dom"
+import { useState } from "react";
+import { Route, Routes, createBrowserRouter, RouterProvider } from "react-router-dom"
 import Recipes from "./Recipes";
 import Favorites from "./Favorites";
 import HomePage from "./HomePage";
 import RecipePage from "./RecipePage";
 
+
 export default function SecContent({allRecipes}) {
 const { Content} = Layout;
-//console.log("allRecipes in SEcContent",allRecipes)
-
+const [favRecip,setfavRecip]=useState([]);
 return(
     <Content style={{margin: ' 16px',}}>
       <div style={{
@@ -18,12 +19,12 @@ return(
               borderRadius: 'fff',
             }}>
             content
-          <Routes>
+            <Routes>
           <Route path="/" element={<HomePage/>}  exact />
-          <Route path="/recipes" element={<Recipes allRecipes={allRecipes}/>} >
+          <Route path="/recipes" element={<Recipes allRecipes={allRecipes} favRecip={favRecip} setfavRecip={setfavRecip}/>} >
             <Route path="/recipes/:id" element={<RecipePage allRecipes={allRecipes} />}></Route>
             </Route>
-          <Route path="/favorites" element={<Favorites/>} />
+          <Route path="/favorites" element={<Favorites favRecip={favRecip} setfavRecip={setfavRecip}/>} />
         </Routes>
 
           </div>

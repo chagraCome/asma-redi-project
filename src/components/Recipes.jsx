@@ -2,7 +2,7 @@
 import { Layout, Row, Flex} from "antd";
 import RecipeCard from "./RecipeCard";
 import { Link } from "react-router-dom";
-export default function Recipes({allRecipes}) {
+export default function Recipes({allRecipes,favRecip,setfavRecip}) {
  //console.log(allRecipes)
  /**
      
@@ -14,7 +14,7 @@ return(
          {allRecipes?.map((recipe)=>
       ( 
          <Link to={recipe.id}>
-         <RecipeCard key={recipe.id}  recipeData={recipe}  />
+         <RecipeCard key={recipe.id}  recipeData={recipe} favRecip={favRecip} setfavRecip={setfavRecip} />
          </Link>
         
       ))} 

@@ -3,7 +3,7 @@ import { Layout } from 'antd'
 import SecHeader from './components/SecHeader'
 import SecFooter from './components/SecFooter'
 import SecContent from './components/SecContent'
-import { RouterProvider,BrowserRouter } from 'react-router-dom'
+import { BrowserRouter} from 'react-router-dom'
 import { useRecipes} from "./service/recip";
 
 function App() {
@@ -12,15 +12,12 @@ function App() {
 
   return (
    
-    <BrowserRouter>  
+    <BrowserRouter>
     <SecHeader />
     <SecContent allRecipes={recipes} />
     <SecFooter />
-    </BrowserRouter>
+  </BrowserRouter>
 
-
-    
-   
   )
 }
 
