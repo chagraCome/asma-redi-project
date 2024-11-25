@@ -1,6 +1,13 @@
 import { Card, Button  } from "antd";
-export default function MovieCard() {
+export default function MovieCard({recipeData}) {
 const { Meta } = Card;
+console.log(recipeData)
+/*
+cover={<img alt="example" src={recipeData.image} />}
+  >
+    <Meta title={recipeData.name} description={recipeData.servings} />
+    <Button style={{marginTop:15}}type="primary">Add to Watchlist</Button>
+*/
 return(
   <>
     <Card
@@ -8,10 +15,11 @@ return(
     style={{
       width: 240,
     }}
-    cover={<img alt="example" src="https://os.alipayobjects.com/rmsportal/QBnOOoLaAfKPirc.png" />}
-  >
-    <Meta title="Europe Street beat" description="www.instagram.com" />
-    <Button style={{marginTop:15}}type="primary">Add to Watchlist</Button>
+    cover={<img alt="example" src={recipeData.image} />}
+    >
+      <Meta title={recipeData.name} description={recipeData.servings} />
+      <Button style={{marginTop:15}}type="primary">Add to Watchlist</Button>
+
   </Card>
   </>
   

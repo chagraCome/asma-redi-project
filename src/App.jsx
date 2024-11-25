@@ -7,14 +7,14 @@ import { RouterProvider,BrowserRouter } from 'react-router-dom'
 import { useRecipes} from "./service/recip";
 
 function App() {
-  const recipes = [...Array(10)].map(() => useRecipes());
-  console.log(recipes)
+  const recipes =useRecipes().recipes;
+  //console.log(recipes)
 
   return (
    
     <BrowserRouter>  
     <SecHeader />
-    <SecContent />
+    <SecContent allRecipes={recipes} />
     <SecFooter />
     </BrowserRouter>
 

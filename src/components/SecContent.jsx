@@ -2,9 +2,10 @@ import { Layout, Row, Flex} from "antd";
 import { Route, Routes } from "react-router-dom"
 import Movies from "./Movies";
 import Watchlist from "./Watchlist";
-export default function SecContent() {
-const { Content} = Layout;
 
+export default function SecContent({allRecipes}) {
+const { Content} = Layout;
+//console.log("allRecipes in SEcContent",allRecipes)
 
 return(
     <Content style={{margin: ' 16px',}}>
@@ -16,8 +17,8 @@ return(
             }}>
             content
           <Routes>
-          <Route path="/" Component={Movies} exact />
-          <Route path="/watchlist" Component={Watchlist} />
+          <Route path="/" element={<Movies allRecipes={allRecipes}/>} exact />
+          <Route path="/watchlist" element={<Watchlist/>} />
         </Routes>
 
           </div>
