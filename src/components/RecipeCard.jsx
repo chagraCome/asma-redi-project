@@ -7,6 +7,9 @@ const { Meta } = Card;
 const AddToFavorite=()=>{
   setfavRecip([...favRecip, recipeData])
 }
+const RemoveFromFavorite=()=>{
+  setfavRecip(favRecip.map((rec)=>(rec.id !== recipeData.id)))
+}
 return(
   <>
     <Card
@@ -17,9 +20,13 @@ return(
     cover={<img alt="example" src={recipeData.image} />}
     >
       <Meta title={recipeData.name} description={recipeData.servings} />
-      
+      {favRecip.includes(recipeData)?
+      (
       <Button style={{marginTop:15}}type="primary" 
-      onClick={AddToFavorite}>read more</Button>
+      onClick={RemoveFromFavorite}>Remove From Favorite</Button>)
+      :(
+      <Button style={{marginTop:15}}type="primary" 
+      onClick={AddToFavorite}>Add To Favorite</Button>)}
 
     
     
