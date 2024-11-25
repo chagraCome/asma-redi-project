@@ -1,13 +1,11 @@
 import { Card, Button  } from "antd";
+import RecipePage from "./RecipePage";
 export default function MovieCard({recipeData}) {
 const { Meta } = Card;
-console.log(recipeData)
-/*
-cover={<img alt="example" src={recipeData.image} />}
-  >
-    <Meta title={recipeData.name} description={recipeData.servings} />
-    <Button style={{marginTop:15}}type="primary">Add to Watchlist</Button>
-*/
+//console.log(recipeData)
+const handleClick=()=>{
+
+}
 return(
   <>
     <Card
@@ -18,7 +16,7 @@ return(
     cover={<img alt="example" src={recipeData.image} />}
     >
       <Meta title={recipeData.name} description={recipeData.servings} />
-      <Button style={{marginTop:15}}type="primary">Add to Watchlist</Button>
+      <Button style={{marginTop:15}}type="primary" onClick={()=> <RecipePage recipeData={recipeData} key={recipeData.id}/>}>read more</Button>
 
   </Card>
   </>
