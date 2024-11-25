@@ -1,10 +1,8 @@
 import { Layout, Row, Flex ,Image} from "antd";
+import { useParams } from "react-router-dom";
 
 export default function RecipePage({recipeData}) {
- //console.log(allRecipes)
- /**
-     
-  */
+ const {id}=useParams();
 return(
     <Layout style={{textAlign: 'center'}}>
          <Flex wrap gap="middle" horizontal>

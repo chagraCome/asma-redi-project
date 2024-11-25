@@ -5,14 +5,14 @@ export default function SecHeader() {
     const { Header} = Layout;
     const items = [
         {
-          label: "All Movies",
-          key: "Movies",
-          target: "/",
+          label: "All Recipes",
+          key: "recipes",
+          target: "/recipes",
         },
         {
-          label: "Watchlist",
-          key: "watchlist",
-          target: "/watchlist",
+          label: "Favorites",
+          key: "favorites",
+          target: "/favorites",
         },
       ];
     
@@ -36,7 +36,7 @@ export default function SecHeader() {
           <Menu className={styles.radiantbg}
             theme="dark"
             mode="horizontal"
-            defaultSelectedKeys={["allMovies"]}
+            defaultSelectedKeys={["recipes"]}
             items={items}
             onClick={handleClick}
           />

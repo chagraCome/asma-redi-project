@@ -1,5 +1,5 @@
 import { Layout } from "antd";
-export default function Watchlist() {
+export default function Favorites() {
     
 return(
     <Layout style={{textAlign: 'center'}}>
