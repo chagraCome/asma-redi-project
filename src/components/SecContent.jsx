@@ -4,25 +4,18 @@ import Movies from "./Movies";
 import Watchlist from "./Watchlist";
 export default function SecContent() {
 const { Content} = Layout;
-return(
-    <Content
-          style={{
-            margin: ' 16px',
-          }}
-        >
-             
 
-            
-          <div
-            style={{
+
+return(
+    <Content style={{margin: ' 16px',}}>
+      <div style={{
               padding: 24,
               minHeight: 360,
               background: '#f5f5f5',
               borderRadius: 'fff',
-            }}
-          >
+            }}>
             content
-            <Routes>
+          <Routes>
           <Route path="/" Component={Movies} exact />
           <Route path="/watchlist" Component={Watchlist} />
         </Routes>
