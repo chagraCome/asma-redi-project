@@ -5,7 +5,6 @@ import SecFooter from './components/SecFooter'
 import SecContent from './components/SecContent'
 import { BrowserRouter} from 'react-router-dom'
 import { useRecipes} from "./service/recip";
-
 function App() {
   const recipes = useRecipes().recipes;
   //console.log(recipes)

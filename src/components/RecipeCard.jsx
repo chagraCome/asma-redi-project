@@ -35,14 +35,10 @@ return(
       }}
       cover={<img alt="example" src={recipeData.image} />}
     >
-      <Link to={recipeData.id}>
         <Meta title={recipeData.name} description={recipeData.servings} />
-      </Link>
+      
     </Card>
- 
-  <Routes>
-    <Route path=":recipeId" element={<RecipePage allRecipes={recipeData} />} />
-  </Routes>
+
 </div>
 
   

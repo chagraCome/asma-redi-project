@@ -3,15 +3,19 @@ import { useParams } from "react-router-dom";
 
 export default function RecipePage({recipeData}) {
  const {recipeId}=useParams();
+ /**
+ 
+  */
 return(
     <Layout style={{textAlign: 'center'}}>
-         <Flex wrap gap="middle" horizontal>
+      <Flex wrap gap="middle" horizontal> 
   <Image
     width={200}
     src="https://zos.alipayobjects.com/rmsportal/jkjgkEfvpUPVyRjUImniVslZfWPnJuuZ.png"
   />
 );
 <Flex wrap gap="middle" horizontal>
+  hi
     <h5> Serving:</h5> <p>{recipeData.servings}</p>
     <h5> prep Time:</h5> <p>{recipeData.prepTimeMinutes}</p>
     <h5> Cooking Time:</h5> <p>{recipeData.cookTimeMinutes}</p>
@@ -28,6 +32,7 @@ return(
     </div>
     </Flex>
             </Flex>
+
             </Layout>
 )
 }

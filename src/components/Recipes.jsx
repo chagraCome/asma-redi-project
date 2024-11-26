@@ -13,9 +13,9 @@ return(
             
          {allRecipes?.map((recipe)=>
       ( 
-         <Link to={recipe.id}>
+       
          <RecipeCard key={recipe.id}  recipeData={recipe} favRecip={favRecip} setfavRecip={setfavRecip} />
-         </Link>
+         
         
       ))} 
       <Outlet />  
