@@ -21,9 +21,7 @@ return(
             content
             <Routes>
           <Route path="/" element={<HomePage/>}  exact />
-          <Route path="/recipes" element={<Recipes allRecipes={allRecipes} favRecip={favRecip} setfavRecip={setfavRecip}/>} >
-            <Route path="/recipes/:id" element={<RecipePage allRecipes={allRecipes} />}></Route>
-            </Route>
+          <Route path="/recipes" element={<Recipes allRecipes={allRecipes} favRecip={favRecip} setfavRecip={setfavRecip}/>} />
           <Route path="/favorites" element={<Favorites favRecip={favRecip} setfavRecip={setfavRecip}/>} />
         </Routes>
 

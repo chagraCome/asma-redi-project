@@ -7,14 +7,14 @@ import { BrowserRouter} from 'react-router-dom'
 import { useRecipes} from "./service/recip";
 
 function App() {
-  const recipes =useRecipes().recipes;
+  const recipes = useRecipes().recipes;
   //console.log(recipes)
 
   return (
    
     <BrowserRouter>
     <SecHeader />
-    <SecContent allRecipes={recipes} />
+    <SecContent allRecipes={ recipes } />
     <SecFooter />
   </BrowserRouter>
 

@@ -1,8 +1,8 @@
 
 import { Layout, Row, Flex} from "antd";
 import RecipeCard from "./RecipeCard";
-import { Link } from "react-router-dom";
-export default function Recipes({allRecipes,favRecip,setfavRecip}) {
+import { Outlet,Link } from "react-router-dom";
+export default function Recipes({ allRecipes,favRecip,setfavRecip }) {
  //console.log(allRecipes)
  /**
      
@@ -18,7 +18,7 @@ return(
          </Link>
         
       ))} 
-    
+      <Outlet />  
             </Flex>
     
 )
