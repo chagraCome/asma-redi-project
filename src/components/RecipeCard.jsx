@@ -36,7 +36,9 @@ return(
       cover={<img alt="example" src={recipeData.image} />}
     >
         <Meta title={recipeData.name} description={recipeData.servings} />
-      
+        <Link key={recipeData.id} to={`/recipes/${recipeData.id}`}>
+     <Button type="primary"> read more</Button>
+     </Link>
     </Card>
 
 </div>

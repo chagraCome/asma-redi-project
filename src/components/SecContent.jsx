@@ -1,13 +1,13 @@
 import { Layout, Row, Flex} from "antd";
 import { useState } from "react";
-import { Route, Routes, createBrowserRouter, RouterProvider } from "react-router-dom"
+import { Outlet,Route, Routes, createBrowserRouter, RouterProvider } from "react-router-dom"
 import Recipes from "./Recipes";
 import Favorites from "./Favorites";
 import HomePage from "./HomePage";
 import RecipePage from "./RecipePage";
 
 
-export default function SecContent({allRecipes}) {
+export default function SecContent({ allRecipes }) {
 const { Content} = Layout;
 const [favRecip,setfavRecip]=useState([]);
 return(
@@ -21,14 +21,14 @@ return(
             content
             <Routes>
           <Route path="/" element={<HomePage/>}  exact />
-          <Route path="/recipes" element={<Recipes allRecipes={allRecipes} favRecip={favRecip} setfavRecip={setfavRecip}/>} >
-          <Route path="recipes/:recipeId" element={<RecipePage recipeData={allRecipes} />} />
+          <Route path="/recipes" element={<Recipes allRecipes={allRecipes} favRecip={favRecip} setfavRecip={setfavRecip}/>} />
+          <Route path="/recipes/:recipeId" element={<RecipePage allRecipes={allRecipes} />} >
           </Route>
           <Route path="/favorites" element={<Favorites favRecip={favRecip} setfavRecip={setfavRecip}/>} />
         </Routes>
 
           </div>
-        
+        <Outlet />
         </Content>
 )
 }
