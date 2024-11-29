@@ -1,0 +1,10 @@
+.reviewForm {
+  display: flex;
+  flex-direction: column;
+}
+form * {
+  display: block;
+}
+.errorMsg {
+  color: red;
+}

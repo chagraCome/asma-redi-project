@@ -1,5 +1,3 @@
-.radiantbg{
-    
-   
-    background-image: linear-gradient( blue,lightgrey);
+.radiantbg {
+  background-image: linear-gradient(blue, lightgrey);
 }
