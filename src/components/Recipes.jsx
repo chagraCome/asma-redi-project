@@ -1,8 +1,9 @@
 import { Layout, Row, Flex } from "antd";
 import RecipeCard from "./RecipeCard";
-
+const { Content } = Layout;
 export default function Recipes({ allRecipes, favRecip, setfavRecip }) {
   return (
+    <Content style={{ margin: " 16px", minHeight:"80vh"}}>
     <Flex wrap gap="middle" justify="space-evenly" horizontal >
       {allRecipes?.map((recipe) => (
         <RecipeCard
@@ -13,5 +14,6 @@ export default function Recipes({ allRecipes, favRecip, setfavRecip }) {
         />
       ))}
     </Flex>
+    </Content>
   );
 }

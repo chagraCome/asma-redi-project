@@ -48,9 +48,9 @@ export default function RecipeCard({ recipeData, favRecip, setfavRecip }) {
         }}
         cover={<img alt="example" src={recipeData.image} />}
       >
-        <Meta title={recipeData.name} description={recipeData.servings} />
+        <Meta title={recipeData.name} description={recipeData.cuisine} />
         <Link key={recipeData.id} to={`/recipes/${recipeData.id}`}>
-          <Button type="primary"> read more</Button>
+          <Button className={styles.readMore} type="primary"> read more</Button>
         </Link>
       </Card>
     </div>

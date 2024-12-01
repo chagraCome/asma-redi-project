@@ -15,10 +15,9 @@ import { useRecipes, useRecipe } from "../service/recip";
 
 export default function SecContent() {
   const { recipes } = useRecipes();
-  const { Content } = Layout;
   const [favRecip, setfavRecip] = useState([]);
   return (
-    <Content style={{ margin: " 16px", minHeight:"80vh", display:"flex", justifyContent:"center",alignItems:"center"}}>
+    <>
      {/* <div
         style={{
           padding: 24,
@@ -52,6 +51,6 @@ export default function SecContent() {
         </Routes>
      {/* </div> */}
       <Outlet />
-    </Content>
+    </>
   );
 }
