@@ -4,7 +4,9 @@ export default function HomePage() {
     const { Footer } = Layout;
 return(
     <div className={styles.landingimage} style={{textAlign: 'center'}}>
-        home page
+        <div className={styles.titleHeadline}>
+            what should i cook ??
+        </div>
     </div>
 )
 }

@@ -28,7 +28,7 @@ export default function SecContent() {
         }}
       > */}
         <Routes>
-          <Route path="/home" element={<HomePage />} exact />
+          <Route path="/" element={<HomePage />} exact />
           <Route
             path="/recipes"
             element={

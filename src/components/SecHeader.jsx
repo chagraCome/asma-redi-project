@@ -7,7 +7,7 @@ export default function SecHeader() {
     {
       label: "Home",
       key: "home",
-      target: "/home",
+      target: "/",
     },
     {
       label: "All Recipes",
