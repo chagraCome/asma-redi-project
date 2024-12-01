@@ -18,7 +18,7 @@ export default function SecContent() {
   const { Content } = Layout;
   const [favRecip, setfavRecip] = useState([]);
   return (
-    <Content style={{ margin: " 16px", minHeight:"80vh" }}>
+    <Content style={{ margin: " 16px", minHeight:"80vh", display:"flex", justifyContent:"center",alignItems:"center"}}>
      {/* <div
         style={{
           padding: 24,

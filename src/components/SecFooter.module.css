@@ -1,0 +1,10 @@
+.radiantbg {
+    background-image: linear-gradient(rgb(3, 3, 3),rgb(181, 181, 185));
+    font-weight: 700;
+    font-size: 16px;
+    --current-line-height: 24px;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    text-align: center;
+    color: white;
+  }

@@ -44,7 +44,7 @@ export default function RecipeCard({ recipeData, favRecip, setfavRecip }) {
       <Card
         hoverable
         style={{
-          width: 240,
+          width: 300,
         }}
         cover={<img alt="example" src={recipeData.image} />}
       >
