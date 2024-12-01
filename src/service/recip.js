@@ -19,7 +19,7 @@ export const useRecipes = () => {
     };
     fetchData();
   }, []);
-
+  console.log(data);
   return data;
 };
 export const useRecipe = (id) => {

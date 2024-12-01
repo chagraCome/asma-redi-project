@@ -1,6 +1,7 @@
 import { Layout, Menu } from "antd";
 import styles from "./SecHeader.module.css";
 import { useNavigate } from "react-router-dom";
+
 export default function SecHeader() {
   const { Header } = Layout;
   const items = [
@@ -29,21 +30,18 @@ export default function SecHeader() {
       navigate(target);
     }
   };
+
+  const currentRoute = window.location.pathname;
+  const selectedKey =
+    items.find((item) => item.target === currentRoute)?.key || "home";
+
   return (
-    <Header
-      className={styles.radiantbg}
-     /*  style={{
-        position: "sticky",
-        top: 0,
-        zIndex: 1,
-        width: "100%",
-      }} */ 
-    >
+    <Header className={styles.radiantbg}>
       <Menu
         className={styles.radiantbg}
         theme="dark"
         mode="horizontal"
-        defaultSelectedKeys={["home"]}
+        selectedKeys={[selectedKey]}
         items={items}
         onClick={handleClick}
       />

@@ -15,40 +15,17 @@ import { useRecipes, useRecipe } from "../service/recip";
 
 export default function SecContent() {
   const { recipes } = useRecipes();
-  //const [favRecip, setfavRecip] = useState([]);
   return (
     <>
-     {/* <div
-        style={{
-          padding: 24,
-          minHeight: 360,
-          background: "#f5f5f5",
-          borderRadius: "fff",
-        }}
-      > */}
-        <Routes>
-          <Route path="/" element={<HomePage />} exact />
-          <Route
-            path="/recipes"
-            element={
-              <Recipes
-                allRecipes={recipes}
-               
-              />
-            }
-          />
-          <Route
-            path="/recipes/:recipeId"
-            element={<RecipePage allRecipes={recipes} />}
-          ></Route>
-          <Route
-            path="/favorites"
-            element={
-              <Favorites />
-            }
-          />
-        </Routes>
-     {/* </div> */}
+      <Routes>
+        <Route path="/" element={<HomePage />} exact />
+        <Route path="/recipes" element={<Recipes allRecipes={recipes} />} />
+        <Route
+          path="/recipes/:recipeId"
+          element={<RecipePage allRecipes={recipes} />}
+        ></Route>
+        <Route path="/favorites" element={<Favorites />} />
+      </Routes>
       <Outlet />
     </>
   );

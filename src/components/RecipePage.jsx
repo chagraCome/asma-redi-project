@@ -29,13 +29,13 @@ export default function RecipePage({ allRecipes }) {
         </div>
 
         <br />
-        <Flex wrap gap="middle" horizontal>
+        <Flex wrap gap="middle" horizontal={true}>
           <p><strong>Serving:</strong> {recipeData.servings}</p>
           <p> <strong>prep Time:</strong> {recipeData.prepTimeMinutes}</p>
           <p>  <strong>Cooking Time:</strong> {recipeData.cookTimeMinutes}</p>
           <p> <strong>calories Per Serving:</strong> {recipeData.caloriesPerServing}</p>
         </Flex>
-        <Flex wrap gap="middle" vertical>
+        <Flex wrap gap="middle" vertical={true}>
           <div key={recipeData.id}>
             <h3> Ingredient:</h3>
             {recipeData.ingredients.map((ingredient) => (

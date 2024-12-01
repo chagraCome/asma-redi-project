@@ -9,7 +9,7 @@ export default function Favorites() {
   return (
     <Content style={{ margin: "16px", minHeight: "80vh" }}>
       
-        <Flex wrap gap="middle"  horizontal>
+        <Flex wrap gap="middle"  horizontal={true}>
         {favRecipes && favRecipes.length > 0 ? (
           favRecipes.map((recipe) => (
             <RecipeCard
@@ -19,7 +19,7 @@ export default function Favorites() {
           ))
         
       ) : (
-        <div>You have no favorite recipes yet</div>
+        <div>You have no favorite recipes </div>
       )}
       </Flex>
     </Content>
