@@ -1,19 +1,17 @@
 import { Layout, Row, Flex, Image } from "antd";
 import { useParams } from "react-router-dom";
 import SecForm from "./SecForm";
-import { useRecipe } from "../service/recip";
 import styles from "./RecipePage.module.css";
 import { Divider } from "antd";
 
 export default function RecipePage({ allRecipes }) {
   const { recipeId } = useParams();
-  //try to fetsh data from api directly
-  const recipeData2 = useRecipe(recipeId);
-  console.log(recipeData2);
-// try to fetsh data from array
+ 
+// try to fetsh data from allRecipes array
   const recipeData = allRecipes?.find((item) => item.id == recipeId);
+  // handel error
   if (!recipeData) {
-    return <div>Recipe not found</div>;
+    return <div style={{height:400, margin:60}}>Recipe not found</div>;
   }
  
   return (

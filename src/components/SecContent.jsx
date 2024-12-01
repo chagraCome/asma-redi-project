@@ -11,7 +11,7 @@ import Recipes from "./Recipes";
 import Favorites from "./Favorites";
 import HomePage from "./HomePage";
 import RecipePage from "./RecipePage";
-import { useRecipes, useRecipe } from "../service/recip";
+import { useRecipes} from "../service/recip";
 
 export default function SecContent() {
   const { recipes } = useRecipes();
