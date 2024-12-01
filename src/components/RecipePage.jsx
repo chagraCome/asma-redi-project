@@ -7,9 +7,9 @@ import { Divider } from "antd";
 export default function RecipePage({ allRecipes }) {
   const { recipeId } = useParams();
 
-  // try to fetsh data from allRecipes array
+  // try to fetch data from allRecipes array
   const recipeData = allRecipes?.find((item) => item.id == recipeId);
-  // handel erroror wron child route
+  // handel error or wrong child route
   if (!recipeData) {
     return <div style={{ height: 400, margin: 60 }}>Recipe not found</div>;
   }
