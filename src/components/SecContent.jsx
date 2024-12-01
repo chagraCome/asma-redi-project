@@ -18,18 +18,17 @@ export default function SecContent() {
   const { Content } = Layout;
   const [favRecip, setfavRecip] = useState([]);
   return (
-    <Content style={{ margin: " 16px" }}>
-      <div
+    <Content style={{ margin: " 16px", minHeight:"80vh" }}>
+     {/* <div
         style={{
           padding: 24,
           minHeight: 360,
           background: "#f5f5f5",
           borderRadius: "fff",
         }}
-      >
-        content
+      > */}
         <Routes>
-          <Route path="/" element={<HomePage />} exact />
+          <Route path="/home" element={<HomePage />} exact />
           <Route
             path="/recipes"
             element={
@@ -51,7 +50,7 @@ export default function SecContent() {
             }
           />
         </Routes>
-      </div>
+     {/* </div> */}
       <Outlet />
     </Content>
   );

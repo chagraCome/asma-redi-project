@@ -14,6 +14,8 @@ export default function RecipePage({ allRecipes }) {
     <>
       <Flex wrap gap="middle" verticall>
         <Image width={800} height={400} src={recipeData.image} />
+        <h4>{recipeData.name}</h4>
+        <br />
         <Flex wrap gap="middle" horizontal>
           <h5> Serving:</h5> <p>{recipeData.servings}</p>
           <h5> prep Time:</h5> <p>{recipeData.prepTimeMinutes}</p>
@@ -34,7 +36,7 @@ export default function RecipePage({ allRecipes }) {
         </Flex>
       </Flex>
 
-      <SecForm />
+      <SecForm recipeId={recipeId}/>
     </>
   );
 }

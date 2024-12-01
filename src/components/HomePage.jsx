@@ -1,9 +1,10 @@
 import { Layout } from "antd";
+import styles from './HomePage.module.css'
 export default function HomePage() {
     const { Footer } = Layout;
 return(
-    <Footer style={{textAlign: 'center'}}>
+    <div className={styles.landingimage} style={{textAlign: 'center'}}>
         home page
-    </Footer>
+    </div>
 )
 }

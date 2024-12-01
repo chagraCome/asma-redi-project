@@ -2,7 +2,7 @@ import { Flex } from "antd";
 import RecipeCard from "./RecipeCard";
 export default function Favorites({ favRecip, setfavRecip }) {
   return (
-    <Flex wrap gap="middle" horizontal>
+    <Flex wrap gap="middle" justify="pace-between" horizontal >
       {favRecip?.map((recipe) => (
         <RecipeCard
           recipeData={recipe}

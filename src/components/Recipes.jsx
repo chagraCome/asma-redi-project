@@ -3,7 +3,7 @@ import RecipeCard from "./RecipeCard";
 
 export default function Recipes({ allRecipes, favRecip, setfavRecip }) {
   return (
-    <Flex wrap gap="middle" horizontal>
+    <Flex wrap gap="middle" justify="space-evenly" horizontal >
       {allRecipes?.map((recipe) => (
         <RecipeCard
           key={recipe.id}
