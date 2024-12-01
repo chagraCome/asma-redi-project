@@ -2,8 +2,8 @@
 ------------------------------
 created with vite
 -----------------------------
-In the project directory, you can run:
-npm run dev
+In the project directory,to run
+# npm run dev
 -----------------------------
 # data
 fetch api data from "https://dummyjson.com/recipes"
