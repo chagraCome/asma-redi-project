@@ -19,29 +19,36 @@ export const useRecipes = () => {
     };
     fetchData();
   }, []);
+
   console.log(data);
   return data;
 };
 export const useRecipe = (id) => {
+  const [isLoading, setIsLoading] = useState(false);
   const [myrecipe, setmyrecipe] = useState([]);
-  const api = axios.create({
+  const api2 = axios.create({
     baseURL: "https://dummyjson.com/recipes/" + id,
     withCredentials: false,
   });
   useEffect(() => {
     const fetchDataRecip = async () => {
       try {
-        const response = await api.get("/");
-        setmyrecipe(response.data);
+        const response2 = await api2.get("/");
+        setmyrecipe(response2.data);
+        setIsLoading(true);
       } catch (err) {
         console.error("Error fetching data:", err);
         setmyrecipe([]);
+        setIsLoading(false);
       }
     };
     fetchDataRecip();
-  }, [id]);
+  }, []);
+  if (isLoading) {
+    console.log(isLoading);
+  }
   console.log("https://dummyjson.com/recipes/" + id);
-  console.log(myrecipe);
+  //console.log(myrecipe);
   //console.log("------------");
   return myrecipe;
 };

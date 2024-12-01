@@ -7,11 +7,15 @@ import { Divider } from "antd";
 
 export default function RecipePage({ allRecipes }) {
   const { recipeId } = useParams();
+  //try to fetsh data from api directly
   const recipeData2 = useRecipe(recipeId);
-
-  const recipeData = (allRecipes?.filter((item) => item.id == recipeId))[0];
-
   console.log(recipeData2);
+// try to fetsh data from array
+  const recipeData = allRecipes?.find((item) => item.id == recipeId);
+  if (!recipeData) {
+    return <div>Recipe not found</div>;
+  }
+ 
   return (
     <>
       <div style={{margin:60}}>
@@ -38,13 +42,13 @@ export default function RecipePage({ allRecipes }) {
         <Flex wrap gap="middle" vertical={true}>
           <div key={recipeData.id}>
             <h3> Ingredient:</h3>
-            {recipeData.ingredients.map((ingredient) => (
-              <p>{ingredient}</p>
+            {recipeData.ingredients.map((ingredient,index) => (
+              <p key={index}>{ingredient}</p>
             ))}
 
             <h3> Instructions:</h3>
-            {recipeData.instructions.map((instruction) => (
-              <p>{instruction} </p>
+            {recipeData.instructions.map((instruction,index) => (
+              <p key={index}>{instruction} </p>
             ))}
           </div>
         </Flex>
