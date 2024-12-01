@@ -9,6 +9,9 @@ form * {
   display: block;
   width: 30vw;
 }
+input{
+  height: 30px;
+}
 textarea{
   height: 70px;
 }

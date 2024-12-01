@@ -35,7 +35,7 @@ export default function SecForm({ recipeId, recipeName }) {
       <div className={styles.reviewForm}>
         <h3>Write your thoughts</h3>
         <form onSubmit={handleSubmit(onSubmit)}>
-          <span>Name</span>
+          <span><strong>Name</strong></span>
           <input
             {...register("name", {
               required: "this field is required",
@@ -51,7 +51,7 @@ export default function SecForm({ recipeId, recipeName }) {
             <div className={styles.errorMsg}>{errors.name.message}</div>
           )}
           <br />
-          <span>Your thoughts</span>
+          <span><strong>Your thoughts</strong></span>
           <textarea
             {...register("feedback", {
               required: "this field is required",
