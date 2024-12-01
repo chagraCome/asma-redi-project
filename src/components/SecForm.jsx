@@ -3,8 +3,8 @@ import { useForm } from "react-hook-form";
 import styles from "./SecForm.module.css";
 import { Divider } from "antd";
 
-export default function SecForm({recipeId}) {
-  const [feedbacks, setFeedbacks] = useState({}); 
+export default function SecForm({ recipeId, recipeName }) {
+  const [feedbacks, setFeedbacks] = useState({});
   // State for structured feedbacks
   //const recipeId = "123"; // Example recipe ID (replace with dynamic value if needed)
 
@@ -28,20 +28,12 @@ export default function SecForm({recipeId}) {
   };
 
   return (
-    <>
-      <Divider>Feedback</Divider>
- {/* Display feedbacks */}
- <div>
-        <h3>All Feedbacks for Recipe {recipeId}</h3>
-        <ul>
-          {(feedbacks[recipeId] || []).map((item, index) => (
-            <li key={index}>
-              <strong>{item.name}:</strong> {item.feedback}
-            </li>
-          ))}
-        </ul>
-      </div>
+    <div style={{ margin: 60 }}>
+      <Divider>
+        <h2>Feedback</h2>
+      </Divider>
       <div className={styles.reviewForm}>
+        <h3>Write your thoughts</h3>
         <form onSubmit={handleSubmit(onSubmit)}>
           <span>Name</span>
           <input
@@ -77,7 +69,23 @@ export default function SecForm({recipeId}) {
         </form>
       </div>
 
-     
-    </>
+      {/* Display feedbacks */}
+      <div>
+        <h3>All Feedbacks for Recipe {recipeName}</h3>
+        {feedbacks[recipeId] && feedbacks[recipeId].length > 0 ? (
+          feedbacks[recipeId].map((item, index) => (
+            <div key={index}>
+              <p>
+                <strong>{item.name}:</strong>
+              </p>
+              <p className={styles.feedbackText}>{item.feedback}</p>
+              <Divider />
+            </div>
+          ))
+        ) : (
+          <div>There are no feedbacks yet</div>
+        )}
+      </div>
+    </div>
   );
 }

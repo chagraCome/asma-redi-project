@@ -2,6 +2,8 @@ import { Layout, Row, Flex, Image } from "antd";
 import { useParams } from "react-router-dom";
 import SecForm from "./SecForm";
 import { useRecipe } from "../service/recip";
+import styles from "./RecipePage.module.css";
+import { Divider } from "antd";
 
 export default function RecipePage({ allRecipes }) {
   const { recipeId } = useParams();
@@ -12,31 +14,43 @@ export default function RecipePage({ allRecipes }) {
   console.log(recipeData2);
   return (
     <>
-      <Flex wrap gap="middle" verticall>
-        <Image width={800} height={400} src={recipeData.image} />
-        <h4>{recipeData.name}</h4>
+      <div style={{margin:60}}>
+        <div className={styles.title}>
+          {recipeData.name}
+        </div>
+        
+        <div>
+          <p> <strong> Cuisine: {recipeData.cuisine}</strong></p>
+          <p> {recipeData.difficulty} </p>
+        </div>
+        <Divider />
+        <div className={styles.foodimg}>
+          <Image width={800} height={400} src={recipeData.image} />
+        </div>
+
         <br />
         <Flex wrap gap="middle" horizontal>
-          <h5> Serving:</h5> <p>{recipeData.servings}</p>
-          <h5> prep Time:</h5> <p>{recipeData.prepTimeMinutes}</p>
-          <h5> Cooking Time:</h5> <p>{recipeData.cookTimeMinutes}</p>
+          <p><strong>Serving:</strong> {recipeData.servings}</p>
+          <p> <strong>prep Time:</strong> {recipeData.prepTimeMinutes}</p>
+          <p>  <strong>Cooking Time:</strong> {recipeData.cookTimeMinutes}</p>
+          <p> <strong>calories Per Serving:</strong> {recipeData.caloriesPerServing}</p>
         </Flex>
         <Flex wrap gap="middle" vertical>
           <div key={recipeData.id}>
-            <h5> Ingredient:</h5>
+            <h3> Ingredient:</h3>
             {recipeData.ingredients.map((ingredient) => (
               <p>{ingredient}</p>
             ))}
 
-            <h5> Instructions:</h5>
+            <h3> Instructions:</h3>
             {recipeData.instructions.map((instruction) => (
               <p>{instruction} </p>
             ))}
           </div>
         </Flex>
-      </Flex>
+      </div>
 
-      <SecForm recipeId={recipeId}/>
+      <SecForm recipeId={recipeId} recipeName={recipeData.name} />
     </>
   );
 }
