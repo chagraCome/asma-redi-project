@@ -1,19 +1,19 @@
 import { Flex, Layout } from "antd";
 import RecipeCard from "./RecipeCard";
-
+import { FavContext } from "../context/FavoriteContext";
+import { useContext } from "react";
 const { Content } = Layout;
 
-export default function Favorites({ favRecip, setfavRecip }) {
+export default function Favorites() {
+  const {favRecipes}= useContext(FavContext);
   return (
     <Content style={{ margin: "16px", minHeight: "80vh" }}>
       
         <Flex wrap gap="middle"  horizontal>
-        {favRecip && favRecip.length > 0 ? (
-          favRecip.map((recipe) => (
+        {favRecipes && favRecipes.length > 0 ? (
+          favRecipes.map((recipe) => (
             <RecipeCard
               recipeData={recipe}
-              favRecip={favRecip}
-              setfavRecip={setfavRecip}
               key={recipe.id}
             />
           ))

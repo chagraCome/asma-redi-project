@@ -1,18 +1,21 @@
 import { Card, Button } from "antd";
 import {Link} from "react-router-dom";
 import styles from "./RecipeCard.module.css";
-export default function RecipeCard({ recipeData, favRecip, setfavRecip }) {
+import { FavContext } from "../context/FavoriteContext";
+import { useContext } from "react";
+export default function RecipeCard({ recipeData}) {
+  const {favRecipes, setFavRecipes}=useContext(FavContext);
   const { Meta } = Card;
   const AddToFavorite = () => {
-    setfavRecip([...favRecip, recipeData]);
+    setFavRecipes([...favRecipes, recipeData]);
   };
   const RemoveFromFavorite = () => {
-    setfavRecip(favRecip.filter((rec) => rec.id !== recipeData.id));
+    setFavRecipes(favRecipes.filter((rec) => rec.id !== recipeData.id));
   };
 
   return (
     <div className={styles.cardWrapper}>
-      {favRecip?.includes(recipeData) ? (
+      {favRecipes?.includes(recipeData) ? (
         <div className={styles.heart} onClick={RemoveFromFavorite}>
           <svg
             xmlns="http://www.w3.org/2000/svg"

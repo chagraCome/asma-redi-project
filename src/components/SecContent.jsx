@@ -15,7 +15,7 @@ import { useRecipes, useRecipe } from "../service/recip";
 
 export default function SecContent() {
   const { recipes } = useRecipes();
-  const [favRecip, setfavRecip] = useState([]);
+  //const [favRecip, setfavRecip] = useState([]);
   return (
     <>
      {/* <div
@@ -33,8 +33,7 @@ export default function SecContent() {
             element={
               <Recipes
                 allRecipes={recipes}
-                favRecip={favRecip}
-                setfavRecip={setfavRecip}
+               
               />
             }
           />
@@ -45,7 +44,7 @@ export default function SecContent() {
           <Route
             path="/favorites"
             element={
-              <Favorites favRecip={favRecip} setfavRecip={setfavRecip} />
+              <Favorites />
             }
           />
         </Routes>
