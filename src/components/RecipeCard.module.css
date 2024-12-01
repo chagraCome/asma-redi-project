@@ -14,7 +14,7 @@
 .cardWrapper img {
   display: block; /* To ensure proper alignment */
 }
-.readMore{
+.readMore {
   margin-top: 10px;
   background-color: rgb(94, 94, 92);
   font-weight: 700;

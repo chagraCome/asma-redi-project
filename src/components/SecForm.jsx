@@ -5,8 +5,7 @@ import { Divider } from "antd";
 
 export default function SecForm({ recipeId, recipeName }) {
   const [feedbacks, setFeedbacks] = useState({});
-  // State for structured feedbacks
-  //const recipeId = "123"; // Example recipe ID (replace with dynamic value if needed)
+  // State for  feedbacks
 
   const {
     register,
@@ -23,7 +22,7 @@ export default function SecForm({ recipeId, recipeName }) {
         data, // New feedback
       ],
     }));
-    console.log(feedbacks); // Log updated feedbacks
+    console.log(feedbacks);
     reset();
   };
 
@@ -35,7 +34,9 @@ export default function SecForm({ recipeId, recipeName }) {
       <div className={styles.reviewForm}>
         <h3>Write your thoughts</h3>
         <form onSubmit={handleSubmit(onSubmit)}>
-          <span><strong>Name</strong></span>
+          <span>
+            <strong>Name</strong>
+          </span>
           <input
             {...register("name", {
               required: "this field is required",
@@ -51,7 +52,9 @@ export default function SecForm({ recipeId, recipeName }) {
             <div className={styles.errorMsg}>{errors.name.message}</div>
           )}
           <br />
-          <span><strong>Your thoughts</strong></span>
+          <span>
+            <strong>Your thoughts</strong>
+          </span>
           <textarea
             {...register("feedback", {
               required: "this field is required",

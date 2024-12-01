@@ -33,7 +33,7 @@ export default function SecHeader() {
 
   const currentRoute = window.location.pathname;
   const selectedKey =
-    items.find((item) => item.target === currentRoute)?.key || "home";
+    items.find((item) => item.target === currentRoute)?.key || "recipes";
 
   return (
     <Header className={styles.radiantbg}>

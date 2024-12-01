@@ -1,17 +1,11 @@
 import { Layout, Row, Flex } from "antd";
 import { useState } from "react";
-import {
-  Outlet,
-  Route,
-  Routes,
-  createBrowserRouter,
-  RouterProvider,
-} from "react-router-dom";
+import { Outlet, Route, Routes } from "react-router-dom";
 import Recipes from "./Recipes";
 import Favorites from "./Favorites";
 import HomePage from "./HomePage";
 import RecipePage from "./RecipePage";
-import { useRecipes} from "../service/recip";
+import { useRecipes } from "../service/recip";
 
 export default function SecContent() {
   const { recipes } = useRecipes();

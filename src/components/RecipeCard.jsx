@@ -1,10 +1,10 @@
 import { Card, Button } from "antd";
-import {Link} from "react-router-dom";
+import { Link } from "react-router-dom";
 import styles from "./RecipeCard.module.css";
 import { FavContext } from "../context/FavoriteContext";
 import { useContext } from "react";
-export default function RecipeCard({ recipeData}) {
-  const {favRecipes, setFavRecipes}=useContext(FavContext);
+export default function RecipeCard({ recipeData }) {
+  const { favRecipes, setFavRecipes } = useContext(FavContext);
   const { Meta } = Card;
   const AddToFavorite = () => {
     setFavRecipes([...favRecipes, recipeData]);
@@ -53,7 +53,10 @@ export default function RecipeCard({ recipeData}) {
       >
         <Meta title={recipeData.name} description={recipeData.cuisine} />
         <Link key={recipeData.id} to={`/recipes/${recipeData.id}`}>
-          <Button className={styles.readMore} type="primary"> read more</Button>
+          <Button className={styles.readMore} type="primary">
+            {" "}
+            read more
+          </Button>
         </Link>
       </Card>
     </div>

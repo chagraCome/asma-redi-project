@@ -23,8 +23,8 @@ export const useRecipes = () => {
     fetchData();
   }, []);
 
-  console.log("Loading Status is",isLoading);
-  
+  console.log("Loading Status is", isLoading);
+
   console.log(data);
   return data;
 };
